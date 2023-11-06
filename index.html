@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="apartments" class="apartments">
+        <div class="apartments_list">
+            <h3 class="apartments_heading">Apartments</h3>
+            <ul id="apartments_list" class="apartments_list-list"> 
+            
+            </ul>
+        </div>
+        <div class="apartments_image_wrapper">
+            <img id="room_image" src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699228800&semt=ais" alt="image" class="apartments_image"/>
+        </div>
+    </section>
+</body>
+<script src="./app.js"></script>
+</html>
+
+    <!-- <li id="manoir" class="apartments_list-item list-active">
+                  <div class="apartments_list-item-title">
+                   <span>Manoir</span>
+                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16" fill="none">
+                        <path d="M19.7071 8.70711C20.0976 8.31658 20.0976 7.68342 19.7071 7.29289L13.3431 0.928931C12.9526 0.538407 12.3195 0.538407 11.9289 0.928931C11.5384 1.31946 11.5384 1.95262 11.9289 2.34314L17.5858 8L11.9289 13.6569C11.5384 14.0474 11.5384 14.6805 11.9289 15.0711C12.3195 15.4616 12.9526 15.4616 13.3431 15.0711L19.7071 8.70711ZM8.74228e-08 9L19 9L19 7L-8.74228e-08 7L8.74228e-08 9Z" fill="white"/>
+                    </svg>
+                  </div>
+                  <div class="apartments_list-item-rooms">
+                    <span id="manoir_1">302</span>
+                    <span id="manoir_2">303</span>
+                  </div>
+                </li>
+                <li id="chateau" class="apartments_list-item">
+                    <div class="apartments_list-item-title">
+                     <span>Chateau</span>
+                        <svg class="arrow" width="19" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.7071 8.70711C20.0976 8.31658 20.0976 7.68342 19.7071 7.29289L13.3431 0.928931C12.9526 0.538407 12.3195 0.538407 11.9289 0.928931C11.5384 1.31946 11.5384 1.95262 11.9289 2.34314L17.5858 8L11.9289 13.6569C11.5384 14.0474 11.5384 14.6805 11.9289 15.0711C12.3195 15.4616 12.9526 15.4616 13.3431 15.0711L19.7071 8.70711ZM8.74228e-08 9L19 9L19 7L-8.74228e-08 7L8.74228e-08 9Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="apartments_list-item-rooms">
+                      <span id="chateau_1">302</span>
+                      <span id="chateau_2">303</span>
+                    </div>
+                </li>
+                <li id="lumiere" class="apartments_list-item">
+                    <div class="apartments_list-item-title">
+                     <span>Lumière</span>
+                        <svg class="arrow" width="19" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.7071 8.70711C20.0976 8.31658 20.0976 7.68342 19.7071 7.29289L13.3431 0.928931C12.9526 0.538407 12.3195 0.538407 11.9289 0.928931C11.5384 1.31946 11.5384 1.95262 11.9289 2.34314L17.5858 8L11.9289 13.6569C11.5384 14.0474 11.5384 14.6805 11.9289 15.0711C12.3195 15.4616 12.9526 15.4616 13.3431 15.0711L19.7071 8.70711ZM8.74228e-08 9L19 9L19 7L-8.74228e-08 7L8.74228e-08 9Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="apartments_list-item-rooms">
+                      <span id="lumiere_1">302</span>
+                      <span id="lumiere_2">303</span>
+                    </div>
+                </li>
+                <li id="esprit" class="apartments_list-item">
+                    <div class="apartments_list-item-title">
+                     <span>Esprit</span>
+                        <svg class="arrow" width="19" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.7071 8.70711C20.0976 8.31658 20.0976 7.68342 19.7071 7.29289L13.3431 0.928931C12.9526 0.538407 12.3195 0.538407 11.9289 0.928931C11.5384 1.31946 11.5384 1.95262 11.9289 2.34314L17.5858 8L11.9289 13.6569C11.5384 14.0474 11.5384 14.6805 11.9289 15.0711C12.3195 15.4616 12.9526 15.4616 13.3431 15.0711L19.7071 8.70711ZM8.74228e-08 9L19 9L19 7L-8.74228e-08 7L8.74228e-08 9Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="apartments_list-item-rooms">
+                      <span id="esprit_1">302</span>
+                      <span id="esprit_2">303</span>
+                    </div>
+                </li>
+                <li id="ciel" class="apartments_list-item">
+                    <div class="apartments_list-item-title">
+                     <span>Ciel</span>
+                        <svg class="arrow" width="19" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.7071 8.70711C20.0976 8.31658 20.0976 7.68342 19.7071 7.29289L13.3431 0.928931C12.9526 0.538407 12.3195 0.538407 11.9289 0.928931C11.5384 1.31946 11.5384 1.95262 11.9289 2.34314L17.5858 8L11.9289 13.6569C11.5384 14.0474 11.5384 14.6805 11.9289 15.0711C12.3195 15.4616 12.9526 15.4616 13.3431 15.0711L19.7071 8.70711ZM8.74228e-08 9L19 9L19 7L-8.74228e-08 7L8.74228e-08 9Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="apartments_list-item-rooms">
+                      <span>302</span>
+                      <span>303</span>
+                    </div>
+                </li>
+                <li id="loulou" class="apartments_list-item">
+                    <div class="apartments_list-item-title">
+                     <span>LouLou</span>
+                        <svg class="arrow" width="19" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.7071 8.70711C20.0976 8.31658 20.0976 7.68342 19.7071 7.29289L13.3431 0.928931C12.9526 0.538407 12.3195 0.538407 11.9289 0.928931C11.5384 1.31946 11.5384 1.95262 11.9289 2.34314L17.5858 8L11.9289 13.6569C11.5384 14.0474 11.5384 14.6805 11.9289 15.0711C12.3195 15.4616 12.9526 15.4616 13.3431 15.0711L19.7071 8.70711ZM8.74228e-08 9L19 9L19 7L-8.74228e-08 7L8.74228e-08 9Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="apartments_list-item-rooms">
+                      <span>302</span>
+                      <span>303</span>
+                    </div>
+                </li>
+                <li id="reve" class="apartments_list-item">
+                    <div class="apartments_list-item-title">
+                     <span>Rêve</span>
+                        <svg class="arrow" width="19" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.7071 8.70711C20.0976 8.31658 20.0976 7.68342 19.7071 7.29289L13.3431 0.928931C12.9526 0.538407 12.3195 0.538407 11.9289 0.928931C11.5384 1.31946 11.5384 1.95262 11.9289 2.34314L17.5858 8L11.9289 13.6569C11.5384 14.0474 11.5384 14.6805 11.9289 15.0711C12.3195 15.4616 12.9526 15.4616 13.3431 15.0711L19.7071 8.70711ZM8.74228e-08 9L19 9L19 7L-8.74228e-08 7L8.74228e-08 9Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="apartments_list-item-rooms">
+                      <span>302</span>
+                      <span>303</span>
+                    </div>
+                </li>
+                <li id="belle" class="apartments_list-item">
+                    <div class="apartments_list-item-title">
+                     <span>Belle</span>
+                        <svg class="arrow" width="19" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.7071 8.70711C20.0976 8.31658 20.0976 7.68342 19.7071 7.29289L13.3431 0.928931C12.9526 0.538407 12.3195 0.538407 11.9289 0.928931C11.5384 1.31946 11.5384 1.95262 11.9289 2.34314L17.5858 8L11.9289 13.6569C11.5384 14.0474 11.5384 14.6805 11.9289 15.0711C12.3195 15.4616 12.9526 15.4616 13.3431 15.0711L19.7071 8.70711ZM8.74228e-08 9L19 9L19 7L-8.74228e-08 7L8.74228e-08 9Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="apartments_list-item-rooms">
+                      <span>302</span>
+                      <span>303</span>
+                    </div>
+                </li>
+                <li id="etoile" class="apartments_list-item">
+                    <div class="apartments_list-item-title">
+                     <span>Étoile</span>
+                        <svg class="arrow" width="19" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.7071 8.70711C20.0976 8.31658 20.0976 7.68342 19.7071 7.29289L13.3431 0.928931C12.9526 0.538407 12.3195 0.538407 11.9289 0.928931C11.5384 1.31946 11.5384 1.95262 11.9289 2.34314L17.5858 8L11.9289 13.6569C11.5384 14.0474 11.5384 14.6805 11.9289 15.0711C12.3195 15.4616 12.9526 15.4616 13.3431 15.0711L19.7071 8.70711ZM8.74228e-08 9L19 9L19 7L-8.74228e-08 7L8.74228e-08 9Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="apartments_list-item-rooms">
+                      <span>302</span>
+                      <span>303</span>
+                    </div>
+                </li>
+                <li id="soleil" class="apartments_list-item">
+                    <div class="apartments_list-item-title">
+                     <span>Soleil</span>
+                        <svg class="arrow" width="19" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.7071 8.70711C20.0976 8.31658 20.0976 7.68342 19.7071 7.29289L13.3431 0.928931C12.9526 0.538407 12.3195 0.538407 11.9289 0.928931C11.5384 1.31946 11.5384 1.95262 11.9289 2.34314L17.5858 8L11.9289 13.6569C11.5384 14.0474 11.5384 14.6805 11.9289 15.0711C12.3195 15.4616 12.9526 15.4616 13.3431 15.0711L19.7071 8.70711ZM8.74228e-08 9L19 9L19 7L-8.74228e-08 7L8.74228e-08 9Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="apartments_list-item-rooms">
+                      <span>302</span>
+                      <span>303</span>
+                    </div>
+                </li> -->
