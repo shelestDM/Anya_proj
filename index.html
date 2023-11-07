@@ -6,6 +6,226 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  transition: 0.5s;
+}
+:root {
+  --border-non-active-color: #a5a5a5;
+  --border-active-color: #fff;
+}
+.apartments {
+  width: 100%;
+  display: flex;
+  height: 796px;  
+}
+.apartments_list {
+  background: #011e41;
+  width: 573px;
+  height: 100%;
+  padding: 101px 103px 100px 133px;
+}
+
+.apartments_heading {
+  color: #fff;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 126%;
+  text-transform: uppercase;
+  height: 96px;
+}
+.apartments_list-list {
+  list-style-type: none;
+}
+
+.apartments_list-item {
+  color: #fff;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 166.5%;
+  border-bottom: 1px solid #a5a5a5;
+  padding-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8.5px;
+  height: 39px;
+  overflow: hidden;
+  margin-bottom: 11px;
+}
+
+.apartments_list-item:hover .arrow{
+  opacity: 1;
+}
+
+.apartments_list-item-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.apartments_list-item-rooms span {
+  cursor: pointer;
+  position: relative;
+  font-weight: 600;
+}
+
+.apartments_list-item-rooms {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 0 42px;
+}
+
+.arrow {
+  opacity: 0;
+}
+
+.list-active {
+  border-bottom: 1px solid #fff;
+}
+
+.list-active-height {
+  height: 75.5px;
+}
+
+.list-active-height  .arrow {
+  transform: rotate(90deg);
+}
+
+.list-active .apartments_list-item-title span {
+  font-weight: 600;
+}
+
+.apartments_image_wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.apartments_image{
+  width: 100%;
+  height: 529px;
+  object-fit: cover;
+}
+
+.room-active::after{
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #FFF;
+  bottom: -7px;
+  left: 0;
+}
+
+
+/* ///////////////// discover /////////////////*/
+
+
+.discover{
+  width: 100%;
+  padding: 65px 108px 30px 134px;
+}
+.discover_heading{
+  color: #000;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 126%;
+}
+
+.discover_data{
+  margin-top: 80px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.discover_list{
+  list-style-type: none;
+  width: 242px;
+  height: fit-content;
+}
+
+.discover_item{
+  color: #BABABA;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 166.5%;
+  margin-top: 1px;
+}
+
+.list_active{
+  color: #021D49;
+  font-weight: 600;
+}
+
+.discover_places_list{
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: wrap;
+  width: 729px;
+  gap: 50px 0px;
+  margin-bottom: 50px;
+}
+
+.discover_places_place{
+  width: 335px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0px;
+}
+
+.discover_places_place a{
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  text-decoration-line: none;
+  position: relative;
+  width: fit-content;
+}
+
+.discover_places_place a::after{
+  display: block;
+  content: "";
+  width: 100%;
+  position: absolute;
+  height: 1.1px;
+  background: #000;
+  bottom: -4px;
+}
+
+.discover_places_place span{
+  color: #000;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.place_image{
+  width: 729px;
+  height: 317px;
+  flex-shrink: 0;
+}
+
+.hidden{
+  display: none;
+}
+</style>
 <body>
     <section id="apartments" class="apartments">
         <div class="apartments_list">
@@ -15,11 +235,319 @@
             </ul>
         </div>
         <div class="apartments_image_wrapper">
-            <img id="room_image" src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699228800&semt=ais" alt="image" class="apartments_image"/>
+            <img 
+            id="room_image" 
+            src="https://i.ibb.co/Hq6PpJb/Manoir-302.png"
+            alt="image" 
+            class="apartments_image"/>
         </div>
     </section>
+    <section id="discover" class="discover">
+       <div>
+            <h3 class="discover_heading">
+                Discover food, beverage, <br>
+                culture and transportation
+            </h3>
+        <div class="discover_data">
+            <ul class="discover_list">
+                <li id="coffe_shops" class="discover_item list_active">Coffee shops</li>
+                <li id="restaurants" class="discover_item">Restaurants</li>
+                <li id="public_transports" class="discover_item">Public Transportation</li>
+                <li id="gym" class="discover_item">Gyms</li>
+            </ul>
+           <div id="public_places_wrapper">
+                <div class="coffe_shops discover_places">
+                    <ul class="discover_places_list">
+                        <li class="discover_places_place">
+                            <a href="">
+                                Nothing Fancy
+                            </a>
+                            <span class="place_adress">
+                                715 8th St SE Washington, DC 20003
+                            </span>
+                        </li>
+                        <li class="discover_places_place">
+                            <a href="">
+                                Capitol One Café
+                            </a>
+                            <span class="place_adress">
+                                1203 Good Hope Rd SE Washington, DC 20020
+                            </span>
+                        </li>
+                        <li class="discover_places_place">
+                            <a href="">
+                                Peregrine Espresso
+                            </a>
+                            <span class="place_adress">
+                                660 Pennsylvania Ave SE Washington, DC 20003
+                            </span>
+                        </li>
+                        <li class="discover_places_place">
+                            <a href="">
+                                Starbucks
+                            </a>
+                            <span class="place_adress">
+                                2228 Martin Luther King Junior Ave SE Washington, DC 20020
+                            </span>
+                        </li>
+                    </ul>
+                    <img class="place_image" src="https://images3.alphacoders.com/132/1322308.jpeg"  alt="intresting_place_image">
+                </div>
+                <div class="restaurants discover_places hidden">
+                    <ul class="discover_places_list">
+                        <li class="discover_places_place">
+                            <a href="">
+                                Nothing Fancy 1
+                            </a>
+                            <span class="place_adress">
+                                715 8th St SE Washington, DC 20003
+                            </span>
+                        </li>
+                        <li class="discover_places_place">
+                            <a href="">
+                                Capitol One Café 1
+                            </a>
+                            <span class="place_adress">
+                                1203 Good Hope Rd SE Washington, DC 20020
+                            </span>
+                        </li>
+                        <li class="discover_places_place">
+                            <a href="">
+                                Peregrine Espresso 1
+                            </a>
+                            <span class="place_adress">
+                                660 Pennsylvania Ave SE Washington, DC 20003
+                            </span>
+                        </li>
+                        <li class="discover_places_place">
+                            <a href="">
+                                Starbucks 1
+                            </a>
+                            <span class="place_adress">
+                                2228 Martin Luther King Junior Ave SE Washington, DC 20020
+                            </span>
+                        </li>
+                    </ul>
+                    <img class="place_image" src="https://images3.alphacoders.com/132/1322308.jpeg"  alt="intresting_place_image">
+                </div>
+                <div class="public_transports  discover_places hidden">
+                    <ul class="discover_places_list">
+                        <li class="discover_places_place">
+                            <a href="">
+                                Nothing Fancy 2
+                            </a>
+                            <span class="place_adress">
+                                715 8th St SE Washington, DC 20003
+                            </span>
+                        </li>
+                        <li class="discover_places_place">
+                            <a href="">
+                                Capitol One Café 2
+                            </a>
+                            <span class="place_adress">
+                                1203 Good Hope Rd SE Washington, DC 20020
+                            </span>
+                        </li>
+                        <li class="discover_places_place">
+                            <a href="">
+                                Peregrine Espresso 2
+                            </a>
+                            <span class="place_adress">
+                                660 Pennsylvania Ave SE Washington, DC 20003
+                            </span>
+                        </li>
+                        <li class="discover_places_place">
+                            <a href="">
+                                Starbucks 2
+                            </a>
+                            <span class="place_adress">
+                                2228 Martin Luther King Junior Ave SE Washington, DC 20020
+                            </span>
+                        </li>
+                    </ul>
+                    <img class="place_image" src="https://images3.alphacoders.com/132/1322308.jpeg"  alt="intresting_place_image">
+                </div>
+                <div class="gym discover_places hidden">
+                    <ul class="discover_places_list">
+                        <li class="discover_places_place">
+                            <a href="">
+                                Nothing Fancy 3
+                            </a>
+                            <span class="place_adress">
+                                715 8th St SE Washington, DC 20003
+                            </span>
+                        </li>
+                        <li class="discover_places_place">
+                            <a href="">
+                                Capitol One Café 3
+                            </a>
+                            <span class="place_adress">
+                                1203 Good Hope Rd SE Washington, DC 20020
+                            </span>
+                        </li>
+                        <li class="discover_places_place">
+                            <a href="">
+                                Peregrine Espresso 3
+                            </a>
+                            <span class="place_adress">
+                                660 Pennsylvania Ave SE Washington, DC 20003
+                            </span>
+                        </li>
+                        <li class="discover_places_place">
+                            <a href="">
+                                Starbucks 3
+                            </a>
+                            <span class="place_adress">
+                                2228 Martin Luther King Junior Ave SE Washington, DC 20020
+                            </span>
+                        </li>
+                    </ul>
+                    <img class="place_image" src="https://images3.alphacoders.com/132/1322308.jpeg"  alt="intresting_place_image">
+                </div>
+           </div>
+        </div>
+       </div>
+    </section>
 </body>
-<script src="./app.js"></script>
+<script>
+let roomsImagesArr = [
+    {key: '302', src: "https://i.ibb.co/Hq6PpJb/Manoir-302.png"},
+    {key: '303', src: "https://i.ibb.co/jZ8MHLY/Chateau-303.png" },
+    {key: '301', src: "https://i.ibb.co/LzppCBz/Lumi-re-301.png" },
+    {key: 'B1', src: "https://i.ibb.co/f00XNDp/Esprit-B1.png"},
+    {key: '101', src: "https://i.ibb.co/j6RPvGP/sprit-101.png"},
+    {key: '201', src: "https://i.ibb.co/mH6jx4P/sprit-201.png"},
+    {key: '101', src: "https://i.ibb.co/j6RPvGP/sprit-101.png"},
+    {key: '305', src: "https://i.ibb.co/RvkDtTn/Ciel-305.png"},
+    {key: 'B3', src: "https://i.ibb.co/KqwFTJd/Lou-Lou-B3.png" },
+    {key: '103', src: "https://i.ibb.co/f9Zh32D/Lou-Lou-103.png" },
+    {key: '203', src: "https://i.ibb.co/FKkssgh/Lou-Lou-203.png" },
+    {key: 'B5', src: "https://i.ibb.co/0D07PyK/R-ve-B5.png"},
+    {key: '105', src: "https://i.ibb.co/SNKFdqZ/R-ve-105.png" },
+    {key: 'B2', src: "https://i.ibb.co/1T6DSTh/Belle-B2.png"  },
+    {key: '101', src: "https://i.ibb.co/RYjGpN9/Belle-102.png"  },
+    {key: '102', src: "https://i.ibb.co/tcRrdF4/Belle-202.png" },
+    {key: '104', src: "https://i.ibb.co/98NsnMg/toile-104.png" },
+    {key: '204', src: "https://i.ibb.co/pJ1Zvq1/toile-204.png" },
+    {key: '304', src: "https://i.ibb.co/N2qJHjK/Soleil-304.png"},
+];
+
+
+let apartmentListData = [
+    {title: 'Manoir', rooms: [302]  },
+    {title: 'Chateau', rooms: [303] },
+    {title: 'Lumière', rooms: [301] },
+    {title: 'Esprit', rooms: ['B1', 101, 201]  },
+    {title: 'Ciel', rooms: [305]  },
+    {title: 'LouLou', rooms: ['B3', 103, 203]  },
+    {title: 'Rêve', rooms: ['B5', 105, 205]  },
+    {title: 'Belle', rooms: ['B2', 102, 202]  },
+    {title: 'Étoile', rooms: [104,204]  },
+    {title: 'Soleil', rooms: [304]  },
+];
+
+let roomImage = document.getElementById('room_image');
+let apartmentListWrapper = document.getElementById('apartments_list');
+
+async function GenerateMarkup (){
+    await CreateApartmentsItems();
+    AddListenersOnApartmentsListItems();
+    AddListenersOnApartmentsRooms()
+}
+
+function CreateApartmentsItems(){
+   return new Promise((resolve, reject)=>{
+    resolve(CreateApartmentsMarkup())
+   });
+};
+
+function CreateApartmentsMarkup(){
+    apartmentListData.map((apartment)=>{
+        let rooms = ''
+        apartment.rooms.forEach(room=>rooms += `<span id=${room}>${room}</span>`);
+        return apartmentListWrapper.insertAdjacentHTML('beforeend',
+            `
+            <li id="manoir" class="apartments_list-item">
+                <div class="apartments_list-item-title">
+                    <span>${apartment.title}</span>
+                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16" fill="none">
+                        <path d="M19.7071 8.70711C20.0976 8.31658 20.0976 7.68342 19.7071 7.29289L13.3431 0.928931C12.9526 0.538407 12.3195 0.538407 11.9289 0.928931C11.5384 1.31946 11.5384 1.95262 11.9289 2.34314L17.5858 8L11.9289 13.6569C11.5384 14.0474 11.5384 14.6805 11.9289 15.0711C12.3195 15.4616 12.9526 15.4616 13.3431 15.0711L19.7071 8.70711ZM8.74228e-08 9L19 9L19 7L-8.74228e-08 7L8.74228e-08 9Z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="apartments_list-item-rooms">
+                    ${rooms}
+                </div>
+            </li>
+        `)   
+    })
+};
+
+function RemoveActiveClasses(nodeList, activeClass, additionalClass){
+    for (let i = 0; i < nodeList.length; i++) {
+        if(nodeList[i].classList.contains(activeClass)){
+            nodeList[i].classList.remove(activeClass, additionalClass);
+        }
+    }
+};
+
+function AddListenersOnApartmentsListItems(){
+    let apartmentsList = document.querySelector('.apartments_list-list').children;
+    for (let i = 0; i < apartmentsList.length; i++) {
+        apartmentsList[i].addEventListener('click', function(){
+            RemoveActiveClasses(apartmentsList,'list-active','list-active-height');
+            apartmentsList[i].classList.add('list-active','list-active-height');
+        });
+    };
+   
+}
+
+function AddListenersOnApartmentsRooms(){
+    let apartmentsRooms = document.querySelectorAll('.apartments_list-item-rooms span');
+    for (let i = 0; i < apartmentsRooms.length; i++) {
+        apartmentsRooms[i].addEventListener('click', function(e){
+            RemoveActiveClasses(apartmentsRooms, 'room-active');
+            let idKey = this.id;
+            this.classList.add('room-active');
+            roomsImagesArr.find(elem=>{elem.key === idKey ? roomImage.src = elem.src : '';})
+        });
+    };
+}
+
+GenerateMarkup();
+
+
+
+/* discover */
+
+let discoverPlaces = document.getElementById('public_places_wrapper').children;
+let placesListItems = document.querySelector('.discover_list').children;
+let placesListParent = document.querySelector('.discover_list');
+
+placesListParent.addEventListener('click', function(e){
+    let ID = e.target.id;
+    ToggleActiveClassOnPlaceListItem();
+    if(e.target.className !== "discover_list"){
+        e.target.classList.add('list_active');
+        ShowChoisenPlace(ID);
+    }
+});
+
+function ToggleActiveClassOnPlaceListItem (){
+    for (let i = 0; i < placesListItems.length; i++) {
+        placesListItems[i].classList.remove('list_active');
+    };
+}
+
+function ShowChoisenPlace (ID){
+    for (let i = 0; i < discoverPlaces.length; i++) {
+        if(discoverPlaces[i].classList.contains(ID)){
+            discoverPlaces[i].classList.remove('hidden')
+        }else{
+            discoverPlaces[i].classList.add('hidden');
+        }
+    }
+}
+</script>
 </html>
 
     <!-- <li id="manoir" class="apartments_list-item list-active">
