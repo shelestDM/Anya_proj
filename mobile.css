@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  transition: 0.5s;
+}
+:root {
+  --border-non-active-color: #a5a5a5;
+  --border-active-color: #fff;
+}
+.apartments {
+  width: 100%;
+  display: flex;
+  height: 100%; 
+  flex-direction: column;
+}
+.apartments_list {
+  background: #011e41;
+  width: 100%;
+  height: 348px;
+  padding: 21px 20px 0px;
+}
+
+.apartments_heading {
+  color: #FFF;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 126%;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+.apartments_lists_wrapper{
+  display: flex;
+  justify-content: space-between;
+
+}
+.list_height{
+  height: 260px;
+}
+.apartments_list-list {
+  width: 150px;
+  height: 205px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.apartments_list-item {
+  width: 150px;
+  color: #FFF;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 166.5%;
+  border-bottom: 1px solid #a5a5a5;
+  padding-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8.5px;
+  height: 30px;
+  overflow: hidden;
+  margin-bottom: 11px;
+}
+
+.apartments_list-item:hover .arrow{
+  opacity: 1;
+}
+
+.apartments_list-item-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.apartments_list-item-rooms span {
+  cursor: pointer;
+  position: relative;
+  font-weight: 600;
+}
+
+.apartments_list-item-rooms {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 0 42px;
+}
+
+.arrow {
+  opacity: 0;
+}
+
+.list-active {
+  border-bottom: 1px solid #fff;
+}
+
+.list-active-height {
+  height: 57.5px;
+}
+
+.list-active-height  .arrow {
+  transform: rotate(90deg);
+}
+
+.list-active .apartments_list-item-title span {
+  font-weight: 600;
+}
+
+.apartments_image_wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 360px;
+  height: 255px;
+  margin: auto;
+}
+
+.apartments_image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.room-active::after{
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #FFF;
+  bottom: -3px;
+  left: 0;
+}
+
+
+/* ///////////////// discover /////////////////*/
+
+
+.discover{
+  width: 100%;
+  padding: 65px 108px 30px 134px;
+}
+.discover_heading{
+  color: #000;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 126%;
+}
+
+.discover_data{
+  margin-top: 80px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.discover_list{
+  list-style-type: none;
+  width: 242px;
+  height: fit-content;
+}
+
+.discover_item{
+  color: #BABABA;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 166.5%;
+  margin-top: 1px;
+}
+
+.list_active{
+  color: #021D49;
+  font-weight: 600;
+}
+
+.discover_places_list{
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: wrap;
+  width: 729px;
+  gap: 50px 0px;
+  margin-bottom: 50px;
+}
+
+.discover_places_place{
+  width: 335px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0px;
+}
+
+.discover_places_place a{
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  text-decoration-line: none;
+  position: relative;
+  width: fit-content;
+}
+
+.discover_places_place a::after{
+  display: block;
+  content: "";
+  width: 100%;
+  position: absolute;
+  height: 1.1px;
+  background: #000;
+  bottom: -4px;
+}
+
+.discover_places_place span{
+  color: #000;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.place_image{
+  width: 729px;
+  height: 317px;
+  flex-shrink: 0;
+}
+
+.hidden{
+  display: none;
+}
