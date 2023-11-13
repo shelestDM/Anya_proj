@@ -1,0 +1,294 @@
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+  
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    transition: 0.5s;
+  }
+  :root {
+    --border-non-active-color: #a5a5a5;
+    --border-active-color: #fff;
+  }
+  .apartments_mobile {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+  }
+  .apartments_mobile_list {
+    background: #011e41;
+    width: 100%;
+    height: 348px;
+    padding: 21px 20px 0px;
+  }
+  .apartments_mobile_heading {
+    color: #fff;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 126%;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+  .apartments_mobile_lists_wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .list_height {
+    height: 260px;
+  }
+  .apartments_mobile_list-list {
+    min-width: 90%;
+    max-width: 150px;
+    height: 205px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+  
+  .apartments_mobile_list-item {
+    width: 150px;
+    color: #fff;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 166.5%;
+    border-bottom: 1px solid #a5a5a5;
+    padding-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8.5px;
+    height: 30px;
+    overflow: hidden;
+    margin-bottom: 11px;
+  }
+  
+  .apartments_mobile_list-item:hover .arrow {
+    opacity: 1;
+  }
+  
+  .apartments_mobile_list-item-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  .apartments_mobile_list-item-rooms span {
+    cursor: pointer;
+    position: relative;
+    font-weight: 600;
+  }
+  
+  .apartments_mobile_list-item-rooms {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 0 42px;
+  }
+  
+  .arrow {
+    opacity: 0;
+  }
+  
+  .list-active {
+    border-bottom: 1px solid #fff;
+  }
+  
+  .list-active-height {
+    height: 57.5px;
+  }
+  
+  .list-active-height .arrow {
+    transform: rotate(90deg);
+  }
+  
+  .list-active .apartments_mobile_list-item-title span {
+    font-weight: 600;
+  }
+  
+  .apartments_mobile_image_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 0;
+    width: 360px;
+    height: 255px;
+    margin: 0 auto;
+  }
+  
+  .apartments_mobile_image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .room-active::after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    bottom: -3px;
+    left: 0;
+  }
+  .pc {
+    display: none;
+  }
+</style>
+<body>
+<section id="apartments_mobile" class="apartments_mobile">
+              <div class="apartments_mobile_list">
+                  <h3 class="apartments_mobile_heading">Apartments</h3>
+                  <div class="apartments_mobile_lists_wrapper">
+                      <div class="list_height">
+                          <ul id="apartments_mobile_list" class="apartments_mobile_list-list"></ul>
+                      </div>
+                      <div class="list_height">
+                          <ul id="apartments_mobile_list_right" class="apartments_mobile_list-list"></ul>
+                      </div>
+                  </div>
+              </div>
+              <div class="apartments_mobile_image_wrapper">
+                  <img 
+                  id="room_image_mobile" 
+                  src="https://images2.imgbox.com/b0/7a/ce1pNZ1S_o.png"
+                  alt="image" 
+                  class="apartments_mobile_image"/>
+              </div>
+          </section>
+          <script>
+            let roomsImagesArrMobile = [
+          {key: '302', src: "https://images2.imgbox.com/b0/7a/ce1pNZ1S_o.png"},
+          {key: '303', src: "https://raw.githubusercontent.com/shelestDM/Anya_proj/main/Chateau(303).png" },
+          {key: 'B1', src: "https://raw.githubusercontent.com/shelestDM/Anya_proj/main/Esprit(B1).png"},
+          {key: '201', src: "https://images2.imgbox.com/5e/e8/yqVMbfgd_o.png"},
+          {key: '305', src: "https://raw.githubusercontent.com/shelestDM/Anya_proj/main/Ciel(305).png"},
+          {key: 'B3', src: "https://images2.imgbox.com/cf/77/OtqIOg8G_o.png" },
+          {key: '103', src: "https://images2.imgbox.com/b8/11/zPeXAzlb_o.png" },
+          {key: '203', src: "https://images2.imgbox.com/ee/3a/oSSbrQcX_o.png" },
+          {key: 'B5', src: "https://images2.imgbox.com/e8/e1/QaIH7VQ3_o.png"},
+          {key: 'B2', src: "https://raw.githubusercontent.com/shelestDM/Anya_proj/main/Belle(B2).png"  },
+          {key: '102', src: "https://images2.imgbox.com/fb/de/dIWfO351_o.png"  },
+          {key: '202', src: "https://raw.githubusercontent.com/shelestDM/Anya_proj/main/Belle(202).png" },
+          {key: '204', src: "https://images2.imgbox.com/99/1b/3POe0Uox_o.png" },
+          {key: '304', src: "https://images2.imgbox.com/9e/d2/gnInsla8_o.png"},
+          {key: '205', src: "https://images2.imgbox.com/02/c3/zZfQUmLU_o.png"},
+          {key: '301', src: "https://images2.imgbox.com/14/d3/jjZzMkpc_o.png" },
+          {key: '101', src: "https://images2.imgbox.com/7c/64/Fez9W9RU_o.png"},
+          {key: '105', src: "https://images2.imgbox.com/fe/09/02pGoVQL_o.png" },
+          {key: '104', src: "https://images2.imgbox.com/e2/15/5XycpVzJ_o.png" },
+      ];
+      
+      let apartmentListDataMobile = [
+          {title: 'Manoir', rooms: [302]  },
+          {title: 'Chateau', rooms: [303] },
+          {title: 'Lumière', rooms: [301] },
+          {title: 'Esprit', rooms: ['B1', 101, 201]  },
+          {title: 'Ciel', rooms: [305]  },
+      ];
+      
+      let apartmentListDataMobileRight = [
+          {title: 'LouLou', rooms: ['B3', 103, 203]  },
+          {title: 'Rêve', rooms: ['B5', 105, 205]  },
+          {title: 'Belle', rooms: ['B2', 102, 202]  },
+          {title: 'Étoile', rooms: [104,204]  },
+          {title: 'Soleil', rooms: [304]  },
+      ]
+      
+      let roomImage = document.getElementById('room_image');
+      let apartmentListWrapper = document.getElementById('apartments_mobile_list');
+      let apartmentListWrapperRight = document.getElementById('apartments_mobile_list_right')
+      
+       function GenerateMarkup (){
+          CreateApartmentsMarkup()
+          AddListenersOnApartmentsListItems();
+          AddListenersOnApartmentsRooms()
+      }
+      
+      
+      function CreateApartmentsMarkup(){
+          apartmentListDataMobile.map((apartment)=>{
+              let rooms = ''
+              apartment.rooms.forEach(room=>rooms += `<span id=${room}>${room}</span>`);
+              apartmentListWrapper.insertAdjacentHTML('beforeend',
+                  `
+                  <li id="manoir" class="apartments_mobile_list-item">
+                      <div class="apartments_mobile_list-item-title">
+                          <span>${apartment.title}</span>
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="15" height="10" viewBox="0 0 20 16" fill="none">
+                              <path d="M19.7071 8.70711C20.0976 8.31658 20.0976 7.68342 19.7071 7.29289L13.3431 0.928931C12.9526 0.538407 12.3195 0.538407 11.9289 0.928931C11.5384 1.31946 11.5384 1.95262 11.9289 2.34314L17.5858 8L11.9289 13.6569C11.5384 14.0474 11.5384 14.6805 11.9289 15.0711C12.3195 15.4616 12.9526 15.4616 13.3431 15.0711L19.7071 8.70711ZM8.74228e-08 9L19 9L19 7L-8.74228e-08 7L8.74228e-08 9Z" fill="white"/>
+                          </svg>
+                      </div>
+                      <div class="apartments_mobile_list-item-rooms">
+                          ${rooms}
+                      </div>
+                  </li>
+              `)  
+          })
+      
+          apartmentListDataMobileRight.map((apartment)=>{
+              let rooms = ''
+              apartment.rooms.forEach(room=>rooms += `<span id=${room}>${room}</span>`);
+              apartmentListWrapperRight.insertAdjacentHTML('beforeend',
+                  `
+                  <li id="manoir" class="apartments_mobile_list-item">
+                      <div class="apartments_mobile_list-item-title">
+                          <span>${apartment.title}</span>
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="15" height="10" viewBox="0 0 20 16" fill="none">
+                              <path d="M19.7071 8.70711C20.0976 8.31658 20.0976 7.68342 19.7071 7.29289L13.3431 0.928931C12.9526 0.538407 12.3195 0.538407 11.9289 0.928931C11.5384 1.31946 11.5384 1.95262 11.9289 2.34314L17.5858 8L11.9289 13.6569C11.5384 14.0474 11.5384 14.6805 11.9289 15.0711C12.3195 15.4616 12.9526 15.4616 13.3431 15.0711L19.7071 8.70711ZM8.74228e-08 9L19 9L19 7L-8.74228e-08 7L8.74228e-08 9Z" fill="white"/>
+                          </svg>
+                      </div>
+                      <div class="apartments_mobile_list-item-rooms">
+                          ${rooms}
+                      </div>
+                  </li>
+              `)  
+          })
+          
+      };
+      
+      function RemoveActiveClasses(nodeList, activeClass, additionalClass){
+          for (let i = 0; i < nodeList.length; i++) {
+              if(nodeList[i].classList.contains(activeClass)){
+                  nodeList[i].classList.remove(activeClass, additionalClass);
+              }
+          }
+      };
+      
+      function AddListenersOnApartmentsListItems(){
+          let apartmentsList = document.querySelector('.apartments_mobile_list-list').children;
+          let apartmentsListRight = document.getElementById('apartments_mobile_list_right').children;
+          let combineArr = [...apartmentsList, ...apartmentsListRight];
+          for (let i = 0; i < combineArr.length; i++) {
+              combineArr[i].addEventListener('click', function(){
+                  RemoveActiveClasses(combineArr,'list-active','list-active-height');
+                  combineArr[i].classList.add('list-active','list-active-height');
+              });
+          };
+         
+      }
+      
+      function AddListenersOnApartmentsRooms(){
+          let apartmentsRooms = document.querySelectorAll('.apartments_mobile_list-item-rooms span');
+          for (let i = 0; i < apartmentsRooms.length; i++) {
+              apartmentsRooms[i].addEventListener('click', function(e){
+                  RemoveActiveClasses(apartmentsRooms, 'room-active');
+                  let idKey = this.id;
+                  this.classList.add('room-active');
+                  roomsImagesArrMobile.find(elem=>{elem.key === idKey ? roomImage.src = elem.src : '';})
+              });
+          };
+      }
+      
+      GenerateMarkup();
+      
+          </script>
+          </body>
